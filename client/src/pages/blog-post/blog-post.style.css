@@ -1,0 +1,26 @@
+import {useHistory, useParams} from "react-router";
+import React from "react";
+import BlogPostComponent from "../../components/blog-post/blog-post.component";
+import BlogPostCommentListComponent from "../../components/blog-post-comment-list/blog-post-comment-list.component";
+
+const BlogPostPage = () => {
+  let {postId} = useParams<{ postId: string }>();
+
+  const history = useHistory();
+
+  const redirectToList = () => {
+    history.push(`/`);
+  };
+
+  return (
+    <div>
+      <div className="btn-back-container" onClick={event => redirectToList()}>
+        <i className="fa fa-arrow-left"/>
+      </div>
+      <BlogPostComponent postId={postId} />
+      <BlogPostCommentListComponent postId={postId} />
+    </div>
+  )
+}
+
+export default BlogPostPage;

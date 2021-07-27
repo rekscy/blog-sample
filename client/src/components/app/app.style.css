@@ -1,0 +1,22 @@
+.app {
+    background: #ffffff;
+}
+
+.app > h1 {
+    text-align: left;
+    text-transform: uppercase;
+    color: #52d27f;
+    margin-left: 4rem;
+    margin-bottom: 0;
+    font-size: 2.5rem;
+}
+
+.app > h6 {
+    text-align: left;
+    color: #373737;
+    font-weight: normal;
+    margin-left: 4rem;
+    margin-top: 0;
+    margin-bottom: 5rem;
+    font-size: 0.8rem;
+}
