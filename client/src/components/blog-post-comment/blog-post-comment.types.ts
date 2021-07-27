@@ -1,14 +1,5 @@
-export interface BlogPostCommentListListProps {
-  postId: string
-}
+import { BlogPostComment } from "../blog-post-comment-list/blog-post-comment-list.types";
 
-export type BlogPostComments = BlogPostComment[];
-
-export interface BlogPostComment {
-  id: string;
-  title: string;
-  content: string;
-  createdAt: number;
-  updatedAt: number | null;
-  nbrComments: number;
+export interface BlogPostCommentProps {
+  comment: BlogPostComment;
 }

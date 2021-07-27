@@ -1,3 +1,4 @@
-export enum ErrorCode {
-    FETCH_DATA_ERROR = "FETCH_DATA_ERROR"
+export interface BadRequestError {
+  field: string;
+  errorMessage: string;
 }

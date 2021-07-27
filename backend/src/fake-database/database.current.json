@@ -1,8 +1,1 @@
-{
-  "posts":[
-    {
-      "id": ""
-    }
-  ],
-  "comments":[]
-}
+{"blog_posts":[{"id":"abc","title":"My first blog post","content":"Suspendisse a quam nibh. Curabitur et varius lectus. Etiam tincidunt, nibh vitae pulvinar porta, nulla ante iaculis dui, id pharetra justo lacus et urna. Phasellus eget dignissim mauris, fringilla bibendum ipsum. Maecenas posuere purus tortor, sit amet semper arcu tincidunt sit amet. Curabitur maximus pharetra finibus. Donec eros nisi, feugiat ac nulla ut, blandit vehicula sapien. Donec nec porta ante. Nam ante ipsum, pretium eu erat ut, efficitur maximus mi. Nulla facilisi. Nam imperdiet, diam vel euismod ornare, ante eros tincidunt dolor, quis suscipit nunc dolor ac felis.","nbrComments":0,"createdAt":1617278677508},{"id":"efg","title":"My second blog post","content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id lectus nibh. Nullam pharetra semper lacinia. Nullam nec leo in felis ornare condimentum at tempus turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse et euismod sapien. Aliquam malesuada dui sed nulla tincidunt, sed dapibus dui vestibulum. Maecenas ultrices cursus magna, vitae sodales dolor molestie ut. Morbi ex augue, volutpat in metus at, fermentum pharetra sapien. Phasellus viverra orci quis molestie suscipit. Nulla facilisi. Aliquam in iaculis nibh.","nbrComments":3,"createdAt":1619278677508}],"blog_posts_comments":[{"id":"abc","title":"Great post!","message":"Thank you for the post!","createdAt":162278677508,"updatedAt":null,"blogPostId":"efg"},{"id":"efg","title":"Nice one!","message":"Thank you for this amazing post!","createdAt":162288677508,"updatedAt":162298677508,"blogPostId":"efg"},{"id":"hij","title":"Waste of time!","message":"I am the hater guy :)","createdAt":1627397863,"updatedAt":null,"blogPostId":"efg"}]}

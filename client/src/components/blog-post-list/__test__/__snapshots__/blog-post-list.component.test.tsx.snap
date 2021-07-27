@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blog post list Component expect to render Blog post Component correctly 1`] = `ShallowWrapper {}`;

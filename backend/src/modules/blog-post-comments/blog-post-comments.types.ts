@@ -1,11 +1,13 @@
-import BlogPostCommentsRepository from "./blog-post-comments.repository";
+export interface BlogPostCommentInput {
+  title?: string;
+  message: string;
+}
 
-export default class BlogPostCommentsService{
-  static getAllCommentsByBlogPostId(postId: string) {
-    return BlogPostCommentsRepository.findAllByBlogPostId(postId);
-  }
-
-  static findOneCommentsByBlogPostIdAndCommentId(postId: string, commentId: string) {
-    return BlogPostCommentsRepository.findOneByPostIdAndCommentId(postId, commentId);
-  }
+export interface BlogPostCommentDataBase {
+  id: string;
+  title: string | null;
+  message: string;
+  createdAt: number; // Timezone not managed in purpose
+  updatedAt: number | null; // Timezone not managed in purpose
+  blogPostId: string;
 }

@@ -58,3 +58,7 @@ typings/
 .env
 .idea
 /dist/*
+/backend/package-lock.json
+/client/package-lock.json
+/backend/dist/
+/client/build/

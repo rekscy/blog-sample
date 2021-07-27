@@ -1,19 +1,23 @@
-const getBlogPosts = require('./get-todos');
-const getBlogPost = require('./get-todo');
-const createBlogPost = require('./create-todo');
-const updateBlogPost = require('./update-todo');
-const deleteBlogPost = require('./delete-todo');
+import getBlogPosts from "./get-blog-posts.spec";
+import getBlogPost from "./get-blog-post.spec";
+import getBlogPostComments from "./get-blog-post-comments.spec";
+import createBlogPostComment from "./create-blog-post-comment.spec";
+import updateBlogPostComment from "./update-blog-post-comment.spec";
 
-module.exports = {
-  paths:{
-    '/todos':{
-      ...getBlogPosts,
-      ...createBlogPost
+export default {
+  paths: {
+    "/blog-posts": {
+      ...getBlogPosts
     },
-    '/todos/{id}':{
-      ...getBlogPost,
-      ...updateBlogPost,
-      ...deleteBlogPost
+    "/blog-posts/{postId}": {
+      ...getBlogPost
+    },
+    "/blog-posts/{postId}/comments": {
+      ...createBlogPostComment,
+      ...getBlogPostComments
+    },
+    "/blog-posts/{postId}/comments/{commentId}": {
+      ...updateBlogPostComment
     }
   }
-}
+};

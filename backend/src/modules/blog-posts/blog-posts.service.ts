@@ -1,19 +1,16 @@
-import {Router} from "express";
+import BlogPostsRepository from "./blog-posts.repository";
+import BlogPostNotFoundError from "../../errors/blog-post-not-found.error";
 
-const BlogPostsRouter = Router();
+export default class BlogPostsService {
+  static getAllBlogPosts() {
+    return BlogPostsRepository.findAll();
+  }
 
-/**
- * Get all blog posts
- */
-BlogPostsRouter.get("/", async (request, response) => {
-
-});
-
-/**
- * Get a specific blog post by his id
- */
-BlogPostsRouter.get("/:postId", async (request, response) => {
-
-});
-
-export default BlogPostsRouter;
+  static getOneBlogPostById(id: string) {
+    const post = BlogPostsRepository.findOneById(id);
+    if (!post) {
+      throw new BlogPostNotFoundError();
+    }
+    return post;
+  }
+}

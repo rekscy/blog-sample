@@ -1,7 +1,6 @@
 version: '3'
 services:
   backend:
-    restart: always
     build:
       dockerfile: Dockerfile
       context: ./backend
@@ -13,5 +12,3 @@ services:
       context: ./client
     ports:
       - '3000:3000'
-    links:
-      - backend

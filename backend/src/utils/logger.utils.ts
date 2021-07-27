@@ -10,10 +10,10 @@ export enum LogLevel {
   VERBOSE = "verbose",
   DEBUG = "debug",
   SILLY = "silly"
-};
+}
 
 /**
- * Winston instantiation to show logs in console (possible to add files to if needed)
+ * Winston instantiation to show logs in console (possible to add files to if needed).
  */
 export const logger = createLogger({
   format: combine(

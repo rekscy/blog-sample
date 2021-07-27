@@ -1,19 +1,30 @@
-import getBlogPosts from "./get-todos";
-import getBlogPost from "./get-todo";
-import createBlogPost from "./create-todo";
-import updateBlogPost from "./update-todo";
-import deleteBlogPost from "./delete-todo";
-
 export default {
-  paths:{
-    '/todos':{
-      ...getBlogPosts,
-      ...createBlogPost
-    },
-    '/todos/{id}':{
-      ...getBlogPost,
-      ...updateBlogPost,
-      ...deleteBlogPost
+  get: {
+    tags: ["Blog posts operations"],
+    description: "Get all blog posts",
+    operationId: "getBlogPosts",
+    parameters: [],
+    responses: {
+      "200": {
+        description: "Blog posts were obtained",
+        content: {
+          "application/json": {
+            schema: {
+              $ref: "#/components/schemas/BlogPosts"
+            }
+          }
+        }
+      },
+      "500": {
+        description: "Internal error",
+        content: {
+          "application/json": {
+            schema: {
+              $ref: "#/components/schemas/Error"
+            }
+          }
+        }
+      }
     }
   }
-}
+};

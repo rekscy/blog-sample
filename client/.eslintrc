@@ -48,6 +48,10 @@
         "SwitchCase": 1
       }
     ],
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "import/prefer-default-export": "off",
+    "jsdoc/valid-types": "off",
     "jest/no-disabled-tests": "warn",
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "error",
@@ -112,7 +116,8 @@
       {
         "extensions": [
           ".js",
-          ".jsx"
+          ".jsx",
+          ".tsx"
         ]
       }
     ],
@@ -127,7 +132,6 @@
     "jsdoc/require-returns": "off",
     "jsdoc/require-returns-check": "error",
     "jsdoc/require-returns-type": "error",
-    "jsdoc/valid-types": 1,
     // general validation
     "jsdoc/check-tag-names": "error",
     // description validation

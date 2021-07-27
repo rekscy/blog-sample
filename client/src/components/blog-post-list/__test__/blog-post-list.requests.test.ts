@@ -1,6 +1,6 @@
 import axios from "axios";
-import { fetchBlogPosts } from "./blog-post-list.requests";
 import { postsMockedData } from "./blog-post-list.mocked-data";
+import { fetchBlogPosts } from "../blog-post-list.requests";
 
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;

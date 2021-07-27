@@ -7,13 +7,10 @@ import cors from "cors";
 import compression from "compression";
 import morgan from "morgan";
 import specs from "./spec";
-import { logger } from "./utils/logger.utils";
-
 import { errorHandler } from "./middlewares/error-handler.middleware";
 import PageNotFoundError from "./errors/page-not-found.error";
 import BlogPostsRouter from "./modules/blog-posts/blog-posts.router";
 import BlogPostCommentRouter from "./modules/blog-post-comments/blog-post-comments.router";
-import FakeDataBase from "./fake-database/fake-database.class";
 
 const app = express();
 app.use(cors());
@@ -32,16 +29,4 @@ app.all("*", async () => {
 
 app.use(errorHandler);
 
-const main = async () => {
-  // Reset the database if needed
-  FakeDataBase.db.resetData();
-
-  app.listen(4000, () => {
-    logger.info(`Server listening in port 4000`);
-  });
-};
-
-// Catch process errors
-main().catch((error) => {
-  logger.error(error);
-});
+export { app };

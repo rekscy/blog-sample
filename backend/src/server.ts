@@ -1,34 +1,19 @@
-import express, {Request, RequestHandler, Response} from "express";
-import swaggerUI from "swagger-ui-express";
-import bodyParser from "body-parser";
-import helmet from "helmet";
-import cors from "cors";
-import compression from "compression";
-import morgan from "morgan";
-import specs from "./spec";
-import {logger} from "./utils/logger.utils";
-
-const app = express();
-app.use(cors());
-app.use(morgan("dev") as RequestHandler);
-app.use(compression());
-app.use(bodyParser.json() as RequestHandler);
-app.use(bodyParser.urlencoded({extended:false}) as RequestHandler);
-app.use(helmet() as RequestHandler);
-app.use('/api-spec',swaggerUI.serve,swaggerUI.setup(specs));
-
-app.get("*", (req: Request, res: Response) => {
-  res.json({state: "Page dont exist"});
-});
+import { app } from "./app";
+import FakeDataBase from "./fake-database/fake-database.class";
+import { logger } from "./utils/logger.utils";
+import { config } from "./config/config";
 
 const main = async () => {
+  // Reset the database if needed
+  FakeDataBase.db.resetData();
+  const { port, hostName } = config.server;
 
-  app.listen(() => {
-
-  })
+  app.listen(port, hostName, () => {
+    logger.info(`Server listening in port ${port}`);
+  });
 };
 
-main()
-.catch((error) => {
+// Catch process errors
+main().catch((error) => {
   logger.error(error);
 });

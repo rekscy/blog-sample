@@ -1,11 +1,25 @@
-/**
- *  Abstract class that gives the base structure of an error
- */
-export default abstract class AbstractError extends Error{
-  abstract errorCode: number;
-  abstract message: string;
+import AbstractError from "./abstract.error";
 
-  abstract printError(): void;
-  abstract getError(): void;
-  abstract asHttpResponse(): void;
+/**
+ *  Page not found error definition.
+ */
+export default class PageNotFoundError extends AbstractError {
+  errorCode: number;
+  message: string;
+
+  constructor() {
+    super();
+    this.message = "This page does not exist";
+    this.errorCode = 404;
+
+    Object.setPrototypeOf(this, PageNotFoundError.prototype);
+  }
+
+  /**
+   *  Extract the error in a json format.
+   */
+  getError() {
+    const { message } = this;
+    return { message };
+  }
 }

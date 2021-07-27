@@ -1,0 +1,20 @@
+.comment-wrapper{
+  margin: 0;
+  padding: 0;
+}
+
+.comment-wrapper:not(:last-child){
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.comment-wrapper > h6 {
+  font-size: 18px;
+  margin: 5px 0;
+  padding: 5px;
+  color: #946fff;
+}
+
+.comment-wrapper > p {
+  font-size: 16px;
+  margin: 5px;
+}

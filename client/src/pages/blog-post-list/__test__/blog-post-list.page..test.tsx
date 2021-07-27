@@ -1,19 +1,26 @@
-import {act, render} from "@testing-library/react";
+import { act, render, waitFor } from "@testing-library/react";
+import React from "react";
+import axios from "axios";
+import { postsMockedData } from "../../../components/blog-post-list/__test__/blog-post-list.mocked-data";
+import BlogPostListPage from "../blog-post-list.page";
+
+jest.mock("axios");
+const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe("Blog post list", () => {
-  it(" renders the page", () => {
-    act(() => {
-      render(<Hello />, container);
-    });
-    expect(container.textContent).toBe("Salut, étranger");
+  it(" renders the page correctly", async () => {
+    const mockedAxiosResponse = {
+      status: 200,
+      data: postsMockedData,
+    };
 
-    act(() => {
-      render(<Hello name="Jenny" />, container);
-    });
-    expect(container.textContent).toBe("Bonjour, Jenny !");
+    mockedAxios.get.mockImplementationOnce(() =>
+      Promise.resolve(mockedAxiosResponse)
+    );
+    const { getAllByTestId } = await waitFor(() =>
+      render(<BlogPostListPage />)
+    );
 
-    act(() => {
-      render(<Hello name="Margaret" />, container);
-    });
-    expect(container.textContent).toBe("Bonjour, Margaret !");
+    expect(getAllByTestId("blog-post-container").length).toEqual(1);
+  });
 });

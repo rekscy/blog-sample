@@ -1,5 +1,14 @@
-import {BlogPosts} from "../../pages/blog-post/blog-post.types";
+export interface BlogPostProps {
+  postId: string;
+}
 
-export interface BlogPostListProps {
-  blogPosts: BlogPosts
+export type BlogPosts = BlogPost[];
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  content: string;
+  createdAt: number;
+  updatedAt: number | null;
+  nbrComments: number;
 }

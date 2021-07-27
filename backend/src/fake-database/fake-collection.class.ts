@@ -1,25 +1,36 @@
-import fs from "fs";
-type Collection  = [{[key: string]: any}]
+import { Collections, Condition } from "./fake-database.types";
 
-export default class FakeDataBase {
-  //any type used because it's not possible to know in advance what kind
-  // of data will be stored inside
-  data: {[key: string]: Collection}  = {}
-  hasBeenInitialized: boolean = false;
-  fileNamePath = "./database.json";
+export default class FakeCollection {
+  rows: Collections = [];
 
-  async loadDataFromFile(){
-    console.log("loadDataFromFile");
-    console.log(fs.readFileSync(this.fileNamePath).toJSON());
+  findAll() {
+    return this.rows;
   }
 
-  async writeDataInFile(){
-    console.log("writeDataInFile");
-    console.log(fs.writeFileSync(this.fileNamePath, JSON.stringify(this.data)));
+  findWhereRowEquals(conditions: Condition[]) {
+    return this.rows.filter((value) => {
+      for (let i = 0; i < conditions.length; i++) {
+        const { rowKey, rowValue } = conditions[i];
+        if (value[rowKey as string] !== rowValue) {
+          return false;
+        }
+      }
+      return true;
+    });
   }
 
-  getCollection(collectionName: string){
-    console.log("getCollection");
-    console.log(this.data[collectionName]);
+  static createNew(rows?: Collections) {
+    const instance = new FakeCollection();
+    if (rows) {
+      instance.rows = rows;
+    }
+
+    return instance;
+  }
+
+  static fromJSON(data: Collections) {
+    const instance = new FakeCollection();
+    instance.rows = data;
+    return instance;
   }
 }

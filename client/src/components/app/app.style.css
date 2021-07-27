@@ -1,13 +1,11 @@
-.app {
+.app-wrapper {
     background: #ffffff;
 }
 
-.app > h1 {
-    text-align: left;
+.app-wrapper > h1 {
+    text-align: center;
     text-transform: uppercase;
-    color: #52d27f;
-    margin-left: 4rem;
-    margin-bottom: 0;
+    color: #341b79;
     font-size: 2.5rem;
 }
 

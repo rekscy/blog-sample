@@ -1,20 +1,7 @@
-.app-wrapper {
-    background: #ffffff;
-}
-
-.app-wrapper > h1 {
-    text-align: center;
-    text-transform: uppercase;
-    color: #341b79;
-    font-size: 2.5rem;
-}
-
-.app > h6 {
-    text-align: left;
-    color: #373737;
-    font-weight: normal;
-    margin-left: 4rem;
-    margin-top: 0;
-    margin-bottom: 5rem;
-    font-size: 0.8rem;
+.blog-post-wrapper h2 {
+  text-transform: uppercase;
+  text-align: left;
+  color: #5629c8;
+  font-size: 2rem;
+  border-bottom: 1px solid #e5dcff;
 }

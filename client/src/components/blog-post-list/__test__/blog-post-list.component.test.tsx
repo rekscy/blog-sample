@@ -5,7 +5,7 @@ import userEvent from "@testing-library/user-event";
 import { Router } from "react-router";
 import { createMemoryHistory } from "history";
 import { postsMockedData } from "./blog-post-list.mocked-data";
-import BlogPostListComponent from "./blog-post-list.component";
+import BlogPostListComponent from "../blog-post-list.component";
 
 describe("Blog post list Component", () => {
   it("expect to render Blog post Component correctly", () => {

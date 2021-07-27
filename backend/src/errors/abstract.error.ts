@@ -1,11 +1,14 @@
 /**
- *  Abstract class that gives the base structure of an error
+ *  Abstract class that gives the base structure of an error.
  */
-export default abstract class AbstractError extends Error{
-
+export default abstract class AbstractError extends Error {
   abstract errorCode: number;
   abstract message: string;
 
-  abstract printError(): void;
-  abstract asHttpResponse(): void;
+  /**
+   *  Extract the error in a json format.
+   */
+  abstract getError(): {
+    message: string;
+  };
 }
