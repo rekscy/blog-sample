@@ -6,9 +6,9 @@ import { config } from "./config/config";
 const main = async () => {
   // Reset the database if needed
   FakeDataBase.db.resetData();
-  const { port, hostName } = config.server;
+  const { port } = config.server;
 
-  app.listen(port, hostName, () => {
+  app.listen(port, () => {
     logger.info(`Server listening in port ${port}`);
   });
 };

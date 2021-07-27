@@ -68,5 +68,8 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "prettier": {
+    "endOfLine": "auto"
   }
 }
