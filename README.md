@@ -27,12 +27,12 @@ Setup your environment if needed (optional):
  - I tried to document correctly the backend, but put less effort on the client, it was on purpose for a matter of time 
  - The tests I have made, show only general approach, I have not tried to do a full coverage of the code
     ######Full / partial Tested Client components
-        blog-post-list
-        loader
-        blog-post-list
+    - blog-post-list
+    - loader
+    - blog-post-list
         
     ######Tested Backend components
-        almost all the code is covered by the tests
+    - almost all the code is covered by the tests
         
  
  - While error management can still be improved, I have implemented the base of the system
